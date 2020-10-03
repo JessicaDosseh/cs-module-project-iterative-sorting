@@ -13,14 +13,45 @@ def selection_sort(arr):
         # TO-DO: swap
         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
+    print(f'selection_sort: {arr}')
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    # declaration
+    end_of_list = len(arr)
+    current_index = 0
+    # TO-DO:
+    # Compare the first and second item of the data list.
+    # If the first item is bigger than the second item, swap the items.
+    for i in range(len(arr)):
+        # TO-DO:
+        # Move to the next item.
+        # Compare the second item with the third item.
+        # If the second item is bigger than the third, swap the items.
+        for compare in range(current_index + 1, end_of_list):
 
+            if arr[current_index] > arr[compare]:
+                # [ > ] ascending order --- [ < ] descending order
+                arr[current_index], arr[compare] = arr[compare], arr[current_index]
+                current_index += 1
+
+            else:
+                current_index += 1
+
+        # Do this for every item until the end of the list.
+        # Repeat steps 1-3 (decrementing “the end of the list” by 1 each time).
+        end_of_list -= 1
+        current_index = 0
+
+    print(f'bubble_sort: {arr}')
     return arr
+
+
+test_array = [12, 20, 8, 1, 6, 14, 29, 10, 2, 5]
+selection_sort(test_array)
+bubble_sort(test_array)
 
 
 '''
